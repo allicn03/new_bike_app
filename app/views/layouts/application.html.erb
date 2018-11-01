@@ -16,13 +16,21 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", simple_pages_about_path %></li>
-        <li><%= link_to "Contact", simple_pages_contact_path %></li>
-      </ul>
-    </nav>
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <button class="navbar-toggler navbar-toggler-tight" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button><!-- /.navbar-toggler navbar-toggler-tight -->
+      <a class="navbar-brand" href="#">
+        <h4>Bike Berlin</h4>
+      </a><!-- /.navbar-brand -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+        <!-- <li><%#= link_to "Home", root_path %></li> -->
+          <li class="nav-item active"><%= link_to "About", simple_pages_about_path %></li>
+          <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
+        </ul><!-- /.navbar-nav mr-auto -->
+      </div><!-- /.collapse navbar-collapse -->
+    </nav><!-- /.navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse -->
 
     <%= yield %>
 
