@@ -1,24 +1,36 @@
 <p id="notice"><%= notice %></p>
+<div class="show-page">
+  <div class="row">
+    <div class="col-md-6 left-column">
+      <p class="product-show-image">
+        <strong>Image url:</strong>
+        <%= @product.image_url %>
+      </p>
+    </div><!-- /.col-md-6 .left-column -->
+    <div class="col-md-6 right-column">
+      <p>
+        <strong>Name:</strong>
+        <%= @product.name %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @product.description %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+      <p>
+        <strong>Colour:</strong>
+        <%= @product.colour %>
+      </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>Colour:</strong>
-  <%= @product.colour %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+      <p>
+        <strong>Price:</strong>
+        <%= @product.price %>
+      </p>
+      <div class="page-links">
+        <%= link_to 'Edit', edit_product_path(@product) %> |
+        <%= link_to 'Back', products_path %>
+      </div><!-- /.page-links -->
+    </div><!-- /.col-md-6 .right-column -->
+  </div><!-- /.row -->
+</div><!-- /.show-page -->
