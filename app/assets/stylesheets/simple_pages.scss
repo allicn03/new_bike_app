@@ -203,7 +203,19 @@ li {
     padding-left: 16px;
     padding-top: 50px;
 } */
-
+// contact page styles
+.form-control {
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+}
 // footer styles
 footer > p {
   color: white;
