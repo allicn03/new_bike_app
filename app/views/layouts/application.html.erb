@@ -28,6 +28,13 @@
         <!-- <li><%#= link_to "Home", root_path %></li> -->
           <li class="nav-item active"><%= link_to "About", simple_pages_about_path %></li>
           <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
+          <li>
+            <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+              <%= form.label :q, 'Search for:' %>
+              <%= form.text_field :q, id: 'q', value: params[:q] %>
+              <%= form.submit 'Search' %>
+            <% end %>
+          </li>
         </ul><!-- /.navbar-nav mr-auto -->
       </div><!-- /.collapse navbar-collapse -->
     </nav><!-- /.navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse -->
