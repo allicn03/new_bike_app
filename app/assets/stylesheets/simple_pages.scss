@@ -6,6 +6,7 @@ html, body {
   height: 100%;
   margin: 0;
   background-color: black;
+  color: white;
 }
 div {
   display: block;
@@ -221,6 +222,9 @@ li {
 .panel .panel-default .panel-body p {
   color: black;
 }
+
+// devise view styles
+
 // footer styles
 footer > p {
   color: white;
