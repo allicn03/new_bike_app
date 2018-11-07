@@ -49,8 +49,12 @@
         </ul><!-- /.navbar-nav ml-auto -->
       </div><!-- /.collapse navbar-collapse -->
     </nav><!-- /.navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <p id="notice" class="alert alert-primary" role="alert"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p id="alert" class="alert alert-secondary" role="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
 
     <footer class="fixed-bottom">
