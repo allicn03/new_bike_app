@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 # cancancan gem for authorization
 gem 'cancancan', '~> 1.10'
+# will_paginate a pagination library for paginating data
+gem 'will_paginate', '~> 3.1.0'
