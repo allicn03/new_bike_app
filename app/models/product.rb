@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  validates :name, presence: true
   has_many :comments
   def highest_rating_comment
     comments.rating_desc.first
