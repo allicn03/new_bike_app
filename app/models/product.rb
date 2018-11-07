@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   has_many :comments
-  
+  def highest_rating_comment
+    comments.rating_desc.first
+  end
   def self.search(search_term)
     if Rails.env.production? # use "ilike" matching operator for postgres to ignore upper- and lower-case
       Product.where("name ilIKE ?", "%#{search_term}%")
