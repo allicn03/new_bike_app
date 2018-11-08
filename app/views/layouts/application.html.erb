@@ -20,22 +20,18 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button><!-- /.navbar-toggler navbar-toggler-tight -->
-      <a class="navbar-brand" href="#">
-        <h4>Bike Berlin</h4>
-      </a><!-- /.navbar-brand -->
+      <div class="navbar-brand"><!--added-->
+        <a href="#"><h4 id="navbar-brand"><!--class="navbar-brand" removed from a tag and h4 added-->
+          <%= link_to "Bike Berlin", root_path %><!-- added -->
+        </h4></a>
+      </div><!-- /.navbar-brand added was </a> -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
         <!-- <li><%#= link_to "Home", root_path %></li> -->
           <li class="nav-item active"><%= link_to "About", simple_pages_about_path %></li>
           <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
-          <li>
-            <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-              <%= form.label :q, 'Search for:' %>
-              <%= form.text_field :q, id: 'q', value: params[:q] %>
-              <%= form.submit 'Search' %>
-            <% end %>
-          </li>
-        </ul><!-- /.navbar-nav mr-auto -->
+        </ul><!--/.navbar-nav mr-auto added-->
+
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
           <li class="nav-item">
@@ -46,7 +42,18 @@
             <%= link_to('Login', new_user_session_path, class: "nav-link") %>
           </li>
           <% end %>
-        </ul><!-- /.navbar-nav ml-auto -->
+        </ul><!-- /.navbar-nav ml-auto moved-->
+
+          <form class="form-inline mt-2 mt-md-0">
+            <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+              <%= form.label :q, 'Search for:' %>
+              <%= form.text_field :q, id: 'q', value: params[:q] %>
+            <button class="btn btn-online-success">
+              <%= form.submit 'Search' %>
+            </button>
+            <% end %>
+          </form>
+
       </div><!-- /.collapse navbar-collapse -->
     </nav><!-- /.navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse -->
     <% if notice %>
