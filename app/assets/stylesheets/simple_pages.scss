@@ -6,12 +6,15 @@ html, body {
   height: 100%;
   margin: 0;
   background-color: black;
-  // color: white;
+  color: white;
 }
 div {
   display: block;
 }
-
+.stripe {
+  background-color: white;
+  z-index: 50;
+}
 //link styles
 a {
   padding-left: 15px;
