@@ -41,6 +41,10 @@ group :development, :test do
   gem 'sqlite3'
   # for testing
   gem 'rspec-rails', '~>3.8'
+  # for functional testing
+  gem 'rails-controller-testing'
+  # replace fixtures for test data
+  gem "factory_bot_rails", "~>4.0"
 end
 
 group :development do
@@ -63,5 +67,3 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 # will_paginate a pagination library for paginating data
 gem 'will_paginate', '~> 3.1.0'
-# for functional testing
-gem 'rails-controller-testing'
