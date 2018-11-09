@@ -6,7 +6,6 @@
         <strong>Image url:</strong>
         <%= @product.image_url %>
       </p>
-
       <%= render 'new_comment' %>
     </div><!-- /.col-md-6 .left-column -->
     <div class="col-md-6 right-column">
@@ -30,6 +29,12 @@
         <%= @product.price %>
       </p>
 
+      <%= form_with(url: '/payments/create') do |form| %>
+      <p class="stripe">Stripe:
+          <%= render partial: "shared/stripe_checkout_button" %>
+      </p>
+      <% end %>
+
       <p>Average Rating:
         <div class="rated" data-score="<%= @product.average_rating %>"></div>
       </p>
@@ -47,11 +52,7 @@
       <p>
         <%= will_paginate @comments %>
       </p>
-      <p class="stripe">
-        <%= form_with(url: '/payments/create') do |form| %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-        <% end %>
-      </p>
+
       <div class="page-links">
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
