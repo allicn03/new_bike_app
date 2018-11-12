@@ -73,3 +73,5 @@ gem 'stripe'
 gem 'brakeman'
 # for use with memcachier for heroku for caching
 gem 'dalli'
+# for redis server
+gem 'redis-rails'
