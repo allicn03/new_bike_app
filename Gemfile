@@ -71,3 +71,5 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'stripe'
 # for security
 gem 'brakeman'
+# for use with memcachier for heroku for caching
+gem 'dalli'
