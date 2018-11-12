@@ -38,8 +38,8 @@
           <%= render 'new_comment' %>
         </div>
       </div>
-      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
       <div class="col-lg-12 product-comments">
+        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
         <%= render 'comments' %>
     </div>
     <%= will_paginate @comments %>
