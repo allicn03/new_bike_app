@@ -30,7 +30,24 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# devise for user authentication
+gem 'devise'
+# cancancan gem for authorization
+gem 'cancancan', '~> 1.10'
+# will_paginate a pagination library for paginating data
+gem 'will_paginate', '~> 3.1.0'
+# stripe for payments
+gem 'stripe'
+# for security
+gem 'brakeman'
+# for use with memcachier for heroku for caching
+gem 'dalli'
+# for redis server
+gem 'redis-rails'
+# bootstrap gem
+gem 'bootstrap', '~> 4.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -59,19 +76,3 @@ end
 group :production do
   gem 'pg', '~> 0.20'
 end
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# devise for user authentication
-gem 'devise'
-# cancancan gem for authorization
-gem 'cancancan', '~> 1.10'
-# will_paginate a pagination library for paginating data
-gem 'will_paginate', '~> 3.1.0'
-# stripe for payments
-gem 'stripe'
-# for security
-gem 'brakeman'
-# for use with memcachier for heroku for caching
-gem 'dalli'
-# for redis server
-gem 'redis-rails'
