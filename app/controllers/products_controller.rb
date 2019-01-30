@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
-      if @product.nil?
+      if @products.nil?
         flash.now[:notice] = "Your search came up empty. Try searching for another product!"
         @products = Product.all
       end

@@ -16,16 +16,18 @@
   </head>
 
   <body>
-    
+
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button><!-- /.navbar-toggler navbar-toggler-tight -->
-      <div class="navbar-brand"><!--added-->
-        <a href="#"><h4 id="navbar-brand"><!--class="navbar-brand" removed from a tag and h4 added-->
-          <%= link_to "Bike Berlin", root_path %><!-- added -->
-        </h4></a>
-      </div><!-- /.navbar-brand added was </a> -->
+
+        <%= link_to root_path, id: "navbar-brand" do %>
+          <h4>Bike Berlin</h4>
+
+        <% end %>
+
+
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
         <!-- <li><%#= link_to "Home", root_path %></li> -->
@@ -66,7 +68,7 @@
     <%= yield %>
 
     <footer class="fixed-bottom">
-      <p>&copy; 2018 Bike Berlin</p>
+      <p>&copy; <%= Date.today.year %> Bike Berlin</p>
     </footer>
   </body>
 </html>

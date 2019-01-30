@@ -13,14 +13,14 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
     $('.product-reviews').prepend(data.comment);
     $("#average-rating").attr('data-score', data.average_rating);
     refreshRating();
-  }/*,
+  },
 
-  listen_to_comments: function() {
+  /*listen_to_comments: function() {
     return this.perform('listen', {});
       product_id: $("[data-product-id]").data("product-id")
-    });
+    });*/
   }
-  */
+
 });
 /*
 $(document).on('turbolinks:load', function() {
