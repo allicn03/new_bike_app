@@ -16,47 +16,59 @@
   </head>
 
   <body>
-    
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="toggle navigation">
+
+    <!--<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">-->
+    <nav class="navbar navbar-expand-md fixed-top"><!-- not sure I need sticky-top here -->
+      <!--navbar-dark bg-dark-->
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
-      </button><!-- /.navbar-toggler navbar-toggler-tight -->
-      <div class="navbar-brand"><!--added-->
-        <a href="#"><h4 id="navbar-brand"><!--class="navbar-brand" removed from a tag and h4 added-->
-          <%= link_to "Bike Berlin", root_path %><!-- added -->
-        </h4></a>
-      </div><!-- /.navbar-brand added was </a> -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-        <!-- <li><%#= link_to "Home", root_path %></li> -->
-          <li class="nav-item active"><%= link_to "About", simple_pages_about_path %></li>
-          <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
-        </ul><!--/.navbar-nav mr-auto added-->
+      </button>
 
-        <ul class="navbar-nav ml-auto">
-          <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
-          </li>
-          <% else %>
-          <li class="nav-item">
-            <%= link_to('Login', new_user_session_path, class: "nav-link") %>
-          </li>
+      <div class="collapse navbar-collapse" id="collapse_target">
+      <a class="navbar-brand"><!-- add logo image here --></a>
+      <span class="navbar-text"><h4 id="navbar-brand"><%= link_to "Bike Berlin", root_path %></h4></span>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "About", simple_pages_about_path %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= link_to "Products", products_path(@products) %>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#"></a>
+        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+          <a class="dropdown-item">Commuter Bikes</a>
+          <a class="dropdown-item">Mountain Bikes</a>
+          <a class="dropdown-item">Hybrid Bikes</a>
+        </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contact", simple_pages_contact_path %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <form class="form-inline">
+          <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+            <%= form.label :q, 'Search for:' %>
+            <%= form.text_field :q, id: 'q', value: params[:q] %>
+          <button class="btn btn-online-success">
+            <%= form.submit 'Search' %>
+          </button>
           <% end %>
-        </ul><!-- /.navbar-nav ml-auto moved-->
+        </form>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+        </li>
+        <% end %>
+      </ul>
+      </div>
+    </nav>
 
-          <form class="form-inline mt-2 mt-md-0">
-            <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-              <%= form.label :q, 'Search for:' %>
-              <%= form.text_field :q, id: 'q', value: params[:q] %>
-            <button class="btn btn-online-success">
-              <%= form.submit 'Search' %>
-            </button>
-            <% end %>
-          </form>
-
-      </div><!-- /.collapse navbar-collapse -->
-    </nav><!-- /.navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse -->
     <% if notice %>
       <p id="notice" class="alert alert-primary" role="alert"><%= notice %></p>
     <% end %>
