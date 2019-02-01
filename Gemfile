@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+# for environment variables
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
@@ -30,7 +30,24 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# devise for user authentication
+gem 'devise'
+# cancancan gem for authorization
+gem 'cancancan', '~> 1.10'
+# will_paginate a pagination library for paginating data
+gem 'will_paginate', '~> 3.1.0'
+# stripe for payments
+gem 'stripe'
+# for security
+gem 'brakeman'
+# for use with memcachier for heroku for caching
+gem 'dalli'
+# for redis server
+gem 'redis-rails'
+# bootstrap gem
+gem 'bootstrap', '~> 4.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -39,6 +56,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  # for testing
+  gem 'rspec-rails', '~>3.8'
+  # for functional testing
+  gem 'rails-controller-testing'
+  # replace fixtures for test data
+  gem "factory_bot_rails", "~>4.0"
 end
 
 group :development do
@@ -53,11 +76,3 @@ end
 group :production do
   gem 'pg', '~> 0.20'
 end
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# devise for user authentication
-gem 'devise'
-# cancancan gem for authorization
-gem 'cancancan', '~> 1.10'
-# will_paginate a pagination library for paginating data
-gem 'will_paginate', '~> 3.1.0'
