@@ -1,17 +1,15 @@
 <div class="index-content">
   <div class="container product-container">
-  <div class="row" data-product-id="<%= @product.id %>">
+  <div class="row product-show-row1" data-product-id="<%= @product.id %>">
 
     <div class="col-sm-12 col-md-6 left-column">
-      <%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image:@product.image_url) if @product.image_url%>
-      <%= link_to 'Edit', edit_product_path(@product) %> |
-      <%= link_to 'Back', products_path %>
-    </div>
+      <%= image_tag(@product.image_url, class: "img-fluid img-zoom img-show", data_zoom_image:@product.image_url) if @product.image_url%>
+    </div><!-- /.col-sm-12 .col-md-6 .left-column -->
 
-    <div class="col-sm-12 col-md-6 right-column">
-      <p class="productname-show">
+    <div class="col-sm-12 col-md-6 right-column product-right-column">
+      <h3 class="productname-show">
         <%= @product.name %>
-      </p>
+      </h3>
       <p class="product-gallery-decription">
         <%= @product.description %>
       </p>
@@ -24,25 +22,32 @@
       </p>
       <div class="star-rating">
         <p>Average Rating<div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div></p>
-        </div>
+      </div><!-- /#average-rating -->
         <% if !@product.highest_rating_comment.nil? %>
         <%= @product.highest_rating_comment.body %>
         <% end %>
-      </div>
+      </div><!-- /.product-show-row -->
+      <div class="row product-show-row2">
+        <div class="col-md-12">
+          <%= link_to 'Edit', edit_product_path(@product) %> |
+          <%= link_to 'Back', products_path %>
 
-      <%= form_with(url: '/payments/create') do |form| %>
-        <%= render partial: "shared/stripe_checkout_button" %>
-        <%= hidden_field_tag(:product_id, @product.id) %>
-      <% end %>
-        <div id="comment-margins">
-          <%= render 'new_comment' %>
-        </div>
-      </div>
-      <div class="col-lg-12 product-comments">
-        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-        <%= render 'comments' %>
-    </div>
-    <%= will_paginate @comments %>
-</div>
-</div>
-</div>
+          <%= form_with(url: '/payments/create') do |form| %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+            <%= hidden_field_tag(:product_id, @product.id) %>
+          <% end %>
+            <div id="comment-margins">
+              <%= render 'new_comment' %>
+            </div><!-- /#comment-margins -->
+          </div><!-- /.star-rating -->
+        </div><!-- /.col-md-12 -->
+        <div class="col-lg-12 product-comments">
+          <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div><!-- /. alert -->
+          <%= render 'comments' %>
+      <!-- </div> -->
+          <%= will_paginate @comments %>
+        </div><!--/.col-lg-12 product-comments -->
+
+    </div><!-- /.row -->
+  </div><!-- /.container product-container -->
+</div><!-- /.index-content-->
