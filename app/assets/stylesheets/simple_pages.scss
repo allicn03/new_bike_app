@@ -62,12 +62,17 @@ li {
 .jumbotron {
   height: 100vh;
 }
-.jumbotron-text {
+.main-page-header {
   z-index: 1;
-  position: absolute;
+  position: relative;
   text-align: center;
-  margin-left: 312px;
-  margin-top: 100px;
+  margin-top: 250px;
+}
+.main-page-subheader {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+
 }
 
 // asset styles

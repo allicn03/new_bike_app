@@ -47,7 +47,7 @@
       <ul class="navbar-nav ml-auto">
         <form class="form-inline">
           <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-            <%= form.label :q, 'Search for:' %>
+            <%= form.label :q, 'Search for:  ' %>
             <%= form.text_field :q, id: 'q', value: params[:q] %>
           <button class="btn btn-online-success">
             <%= form.submit 'Search' %>
