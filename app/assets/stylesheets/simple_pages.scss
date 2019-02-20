@@ -62,13 +62,12 @@ li {
   z-index: 1;
   position: relative;
   text-align: center;
-  margin-top: 250px;
+  margin-top: 150px;
 }
 .main-page-subheader {
   z-index: 1;
   position: relative;
   text-align: center;
-
 }
 
 // asset styles
@@ -87,6 +86,7 @@ li {
 //form styles search
 form {
   margin-top: 0;
+  margin-left: 200px;
 }
 @media (min-width:768px) {
   .mt-md-0 {
@@ -186,9 +186,12 @@ form {
   z-index: 10;
 }
 
-h1-form {
+.h1-form {
   color: black;
   z-index: 10;
+}
+#h1-login {
+  color: #ffed6d;
 }
 .form-group {
   color: #39FF14;
