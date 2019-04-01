@@ -8,6 +8,13 @@
 .dropdown-toggle {
   display: inline-block;
 }
+.navbar-toggler {
+  max-height: 30px;
+}
+.navbar-toggler-icon {
+  max-height: 1.0em;
+}
+
 footer {
   background-color: #000;
 }
