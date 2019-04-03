@@ -86,7 +86,8 @@ li {
 //form styles search
 form {
   margin-top: 0;
-  margin-left: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 @media (min-width:768px) {
   .mt-md-0 {
@@ -168,7 +169,23 @@ form {
   border: 1px solid rgba(0,0,0,.15);
   border-radius: .25rem;
 }
+@media (max-width: 500px) {
+  form {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  h1 {
+    font-size: 2.0rem;
+  }
+}
 
+.checkbox {
+  max-width: 10%;
+}
+.remember-me {
+  display: inline-block;
+  text-align: right;
+}
 //about styles
 .about {
   margin: 0;
@@ -197,7 +214,7 @@ form {
   color: #39FF14;
 }
 .send {
-  padding-left: 620px;
+  float: right;
 }
 // thank_you styles
 .panel .panel-default .panel-body p {
