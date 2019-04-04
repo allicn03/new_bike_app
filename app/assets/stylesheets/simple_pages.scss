@@ -177,8 +177,18 @@ form {
   h1 {
     font-size: 2.0rem;
   }
+  label {
+    color: black;
+  }
+  .login-label {
+    color: #FFFFFF;
+  }
   .send {
-    background-color: white;
+    background-color: #00FE55;
+  }
+  .actions {
+    background-color: #00FE55;
+    text-align: center;
   }
 }
 
