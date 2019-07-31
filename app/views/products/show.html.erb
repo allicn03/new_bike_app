@@ -3,7 +3,7 @@
   <div class="row product-show-row1" data-product-id="<%= @product.id %>">
 
     <div class="col-sm-12 col-md-6 left-column">
-      <%= image_tag(@product.image_url, class: "img-fluid img-zoom img-show", data_zoom_image:@product.image_url) if @product.image_url%>
+      <%= image_tag(@product.image_url, class: "img-fluid img-zoom img-show cover", data_zoom_image:@product.image_url) if @product.image_url%>
     </div><!-- /.col-sm-12 .col-md-6 .left-column -->
 
     <div class="col-sm-12 col-md-6 right-column product-right-column">
